@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>HashMap底层实现原理 | 个人博客</title>
+  <title>Android使用webView.md | 个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JAVA集合:HashMap底层实现原理Note:JDK1.7分析1、概述Map接口实现，元素以键值对的方式存储，并且允许使用null 建和null　值，　因为key不允许重复，因此只能有一个键为null,另外HashMap不能保证放入元素的顺序，它是无序的，和放入的顺序并不能相同。HashMap是线程不安全的。 2、继承关系public class HashMap&amp;lt;K,V&amp;gt;exten">
+  <meta name="description" content="Android使用WebView遇到得异常问题解决方案一、 错误提示:Android studio使用WebView提示net ERR_CLEARTEXT_NOT_FOUND1、解决方案在文件AndroidManifest.xml中得Application标签中加入属性android:usesCleartextTraffic=true 基本使用代码 小编只是android小白，写的不好，希望理解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HashMap底层实现原理">
-<meta property="og:url" content="http://yoursite.com/2019/06/20/HashMap底层实现原理/index.html">
+<meta property="og:title" content="Android使用webView.md">
+<meta property="og:url" content="http://yoursite.com/2019/06/21/Android使用webView-md/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="JAVA集合:HashMap底层实现原理Note:JDK1.7分析1、概述Map接口实现，元素以键值对的方式存储，并且允许使用null 建和null　值，　因为key不允许重复，因此只能有一个键为null,另外HashMap不能保证放入元素的顺序，它是无序的，和放入的顺序并不能相同。HashMap是线程不安全的。 2、继承关系public class HashMap&amp;lt;K,V&amp;gt;exten">
+<meta property="og:description" content="Android使用WebView遇到得异常问题解决方案一、 错误提示:Android studio使用WebView提示net ERR_CLEARTEXT_NOT_FOUND1、解决方案在文件AndroidManifest.xml中得Application标签中加入属性android:usesCleartextTraffic=true 基本使用代码 小编只是android小白，写的不好，希望理解">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-20T10:12:37.216Z">
+<meta property="og:image" content="http://yoursite.com/assets/android.png">
+<meta property="og:updated_time" content="2019-06-21T09:30:20.691Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HashMap底层实现原理">
-<meta name="twitter:description" content="JAVA集合:HashMap底层实现原理Note:JDK1.7分析1、概述Map接口实现，元素以键值对的方式存储，并且允许使用null 建和null　值，　因为key不允许重复，因此只能有一个键为null,另外HashMap不能保证放入元素的顺序，它是无序的，和放入的顺序并不能相同。HashMap是线程不安全的。 2、继承关系public class HashMap&amp;lt;K,V&amp;gt;exten">
+<meta name="twitter:title" content="Android使用webView.md">
+<meta name="twitter:description" content="Android使用WebView遇到得异常问题解决方案一、 错误提示:Android studio使用WebView提示net ERR_CLEARTEXT_NOT_FOUND1、解决方案在文件AndroidManifest.xml中得Application标签中加入属性android:usesCleartextTraffic=true 基本使用代码 小编只是android小白，写的不好，希望理解">
+<meta name="twitter:image" content="http://yoursite.com/assets/android.png">
   
     <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
   
@@ -154,42 +156,29 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-HashMap底层实现原理" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Android使用webView-md" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      HashMap底层实现原理
+      Android使用webView.md
     </h1>
   
 
         
-        <a href="/2019/06/20/HashMap底层实现原理/" class="archive-article-date">
-  	<time datetime="2019-06-20T09:57:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-20</time>
+        <a href="/2019/06/21/Android使用webView-md/" class="archive-article-date">
+  	<time datetime="2019-06-21T09:09:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="JAVA集合-HashMap底层实现原理"><a href="#JAVA集合-HashMap底层实现原理" class="headerlink" title="JAVA集合:HashMap底层实现原理"></a>JAVA集合:HashMap底层实现原理</h1><h3 id="Note-JDK1-7分析"><a href="#Note-JDK1-7分析" class="headerlink" title="Note:JDK1.7分析"></a>Note:JDK1.7分析</h3><h3 id="1、概述"><a href="#1、概述" class="headerlink" title="1、概述"></a>1、概述</h3><p>Map接口实现，元素以键值对的方式存储，并且允许使用null 建和null　值，　因为key不允许重复，因此只能有一个键为null,另外HashMap不能保证放入元素的顺序，它是无序的，和放入的顺序并不能相同。HashMap是线程不安全的。</p>
-<h3 id="2、继承关系"><a href="#2、继承关系" class="headerlink" title="2、继承关系"></a>2、继承关系</h3><pre><code>public class HashMap&lt;K,V&gt;extends AbstractMap&lt;K,V&gt;
-        implements Map&lt;K,V&gt;, Cloneable, Serializable
-</code></pre><h3 id="3、基本属性"><a href="#3、基本属性" class="headerlink" title="3、基本属性"></a>3、基本属性</h3><pre><code>static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4; //默认初始化大小 16
-static final float DEFAULT_LOAD_FACTOR = 0.75f;     //负载因子0.75
-static final Entry&lt;?,?&gt;[] EMPTY_TABLE = {};         //初始化的默认数组
-transient int size;     //HashMap中元素的数量
-int threshold;          //判断是否需要调整HashMap的容量 
-</code></pre><h5 id="Note：HashMap的扩容操作是一项很耗时的任务，所以如果能估算Map的容量，最好给它一个默认初始值，避免进行多次扩容。HashMap的线程是不安全的，多线程环境中推荐是ConcurrentHashMap。"><a href="#Note：HashMap的扩容操作是一项很耗时的任务，所以如果能估算Map的容量，最好给它一个默认初始值，避免进行多次扩容。HashMap的线程是不安全的，多线程环境中推荐是ConcurrentHashMap。" class="headerlink" title="Note：HashMap的扩容操作是一项很耗时的任务，所以如果能估算Map的容量，最好给它一个默认初始值，避免进行多次扩容。HashMap的线程是不安全的，多线程环境中推荐是ConcurrentHashMap。"></a>Note：HashMap的扩容操作是一项很耗时的任务，所以如果能估算Map的容量，最好给它一个默认初始值，避免进行多次扩容。HashMap的线程是不安全的，多线程环境中推荐是ConcurrentHashMap。</h5><h2 id="二、常被问到的HashMap和Hashtable的区别"><a href="#二、常被问到的HashMap和Hashtable的区别" class="headerlink" title="二、常被问到的HashMap和Hashtable的区别"></a>二、常被问到的HashMap和Hashtable的区别</h2><h3 id="1、线程安全问题"><a href="#1、线程安全问题" class="headerlink" title="1、线程安全问题"></a>1、线程安全问题</h3><p>两者最主要的区别在于Hashtable是线程安全，而HashMap则非线程安全。<br>Hashtable的实现方法里面都添加了synchronized关键字来确保线程同步，因此相对而言HashMap性能会高一些，我们平时使用时若无特殊需求建议使用HashMap，在多线程环境下若使用HashMap需要使用Collections.synchronizedMap()方法来获取一个线程安全的集合。</p>
-<h4 id="Note-Collections-synchronizedMap-实现原理是Collections定义了一个SynchronizedMap的内部类，这个类实现了Map接口，在调用方法时使用synchronized来保证线程同步-当然了实际上操作的还是我们传入的HashMap实例，简单的说就是Collections-synchronizedMap-方法帮我们在操作HashMap时自动添加了synchronized来实现线程同步，类似的其它Collections-synchronizedXX方法也是类似原理。"><a href="#Note-Collections-synchronizedMap-实现原理是Collections定义了一个SynchronizedMap的内部类，这个类实现了Map接口，在调用方法时使用synchronized来保证线程同步-当然了实际上操作的还是我们传入的HashMap实例，简单的说就是Collections-synchronizedMap-方法帮我们在操作HashMap时自动添加了synchronized来实现线程同步，类似的其它Collections-synchronizedXX方法也是类似原理。" class="headerlink" title="Note Collections.synchronizedMap()实现原理是Collections定义了一个SynchronizedMap的内部类，这个类实现了Map接口，在调用方法时使用synchronized来保证线程同步,当然了实际上操作的还是我们传入的HashMap实例，简单的说就是Collections.synchronizedMap()方法帮我们在操作HashMap时自动添加了synchronized来实现线程同步，类似的其它Collections.synchronizedXX方法也是类似原理。"></a>Note Collections.synchronizedMap()实现原理是Collections定义了一个SynchronizedMap的内部类，这个类实现了Map接口，在调用方法时使用synchronized来保证线程同步,当然了实际上操作的还是我们传入的HashMap实例，简单的说就是Collections.synchronizedMap()方法帮我们在操作HashMap时自动添加了synchronized来实现线程同步，类似的其它Collections.synchronizedXX方法也是类似原理。</h4><h3 id="2、针对null的不同"><a href="#2、针对null的不同" class="headerlink" title="2、针对null的不同"></a>2、针对null的不同</h3><p>HashMap可以使用null作为key，而Hashtable则不允许null作为key<br>虽说HashMap支持null值作为key，不过建议还是尽量避免这样使用，因为一旦不小心使用了，若因此引发一些问题，排查起来很是费事。</p>
-<h4 id="Note：HashMap以null作为key时，总是存储在table数组的第一个节点上。"><a href="#Note：HashMap以null作为key时，总是存储在table数组的第一个节点上。" class="headerlink" title="Note：HashMap以null作为key时，总是存储在table数组的第一个节点上。"></a>Note：HashMap以null作为key时，总是存储在table数组的第一个节点上。</h4><h3 id="3、继承结构"><a href="#3、继承结构" class="headerlink" title="3、继承结构"></a>3、继承结构</h3><p>HashMap是对Map接口的实现、HashTable实现了Map接口的Dictionary抽象类</p>
-<h3 id="4、初始容量与扩容"><a href="#4、初始容量与扩容" class="headerlink" title="4、初始容量与扩容"></a>4、初始容量与扩容</h3><p>HashMap的初始容量为16，Hashtable初始容量为11，两者的填充因子默认都是0.75。</p>
-<p>HashMap扩容时是当前容量翻倍即:capacity<em>2，Hashtable扩容时是容量翻倍+1即:capacity</em>2+1。</p>
-<h3 id="5、两者计算hash的方法不同"><a href="#5、两者计算hash的方法不同" class="headerlink" title="5、两者计算hash的方法不同"></a>5、两者计算hash的方法不同</h3><p>Hashtable计算hash是直接使用key的hashcode对table数组的长度直接进行取模<br>HashMap计算hash对key的hashcode进行了二次hash，以获得更好的散列值，然后对table数组长度取摸</p>
-<h2 id="三、HashMap的数据结构存储结构"><a href="#三、HashMap的数据结构存储结构" class="headerlink" title="三、HashMap的数据结构存储结构"></a>三、HashMap的数据结构存储结构</h2><p>下次更新</p>
-<h2 id="四、重要方法深度解析"><a href="#四、重要方法深度解析" class="headerlink" title="四、重要方法深度解析"></a>四、重要方法深度解析</h2>
+        <h1 id="Android使用WebView遇到得异常问题解决方案"><a href="#Android使用WebView遇到得异常问题解决方案" class="headerlink" title="Android使用WebView遇到得异常问题解决方案"></a>Android使用WebView遇到得异常问题解决方案</h1><h2 id="一、-错误提示-Android-studio使用WebView提示net-ERR-CLEARTEXT-NOT-FOUND"><a href="#一、-错误提示-Android-studio使用WebView提示net-ERR-CLEARTEXT-NOT-FOUND" class="headerlink" title="一、 错误提示:Android studio使用WebView提示net ERR_CLEARTEXT_NOT_FOUND"></a>一、 <font color="#ff0000">错误提示:</font>Android studio使用WebView提示net ERR_CLEARTEXT_NOT_FOUND</h2><h3 id="1、解决方案"><a href="#1、解决方案" class="headerlink" title="1、解决方案"></a>1、解决方案</h3><pre><code>在文件AndroidManifest.xml中得Application标签中加入属性android:usesCleartextTraffic=true
+</code></pre><h3 id="基本使用代码"><a href="#基本使用代码" class="headerlink" title="基本使用代码"></a>基本使用代码</h3><p><img src="/assets/android.png" alt="avatar"></p>
+<h4 id="小编只是android小白，写的不好，希望理解"><a href="#小编只是android小白，写的不好，希望理解" class="headerlink" title="小编只是android小白，写的不好，希望理解"></a>小编只是android小白，写的不好，希望理解</h4>
       
 
       
@@ -268,7 +257,7 @@ int threshold;          //判断是否需要调整HashMap的容量
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/20/HashMap底层实现原理/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/21/Android使用webView-md/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -282,15 +271,11 @@ int threshold;          //判断是否需要调整HashMap的容量
   
 <nav id="article-nav">
   
-    <a href="/2019/06/21/Android使用webView-md/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Android使用webView.md
-        
-      </div>
-    </a>
   
+    <a href="/2019/06/20/HashMap底层实现原理/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HashMap底层实现原理</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
