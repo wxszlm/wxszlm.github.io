@@ -6,19 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>小程序在4G网络下的加载超慢的解决方案 | 个人博客</title>
+  <title>Java中的4中引用的差别和使用场景 | 个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="小程序在4G网络下的加载超慢的解决方案">
+  <meta name="description" content="Java中的4中引用的差别和使用场景一、强引用 特点  强引用不会被GC回收，当前内存不足的时候，JVM宁愿抛出java.lang.OutOfMemoryError: Java heap space让程序假死，也不会随意去回收具有强引用的对象 常见的强引用：把一个对象赋给引用变量，这个引用变量就是一个强引用，如果在不使用这个变量的时候，将这变量强制为null，可以被gc掉   代码： 123456">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小程序在4G网络下的加载超慢的解决方案">
-<meta property="og:url" content="http://yoursite.com/2020/03/10/小程序在非wifi加载缓慢问题/index.html">
+<meta property="og:title" content="Java中的4中引用的差别和使用场景">
+<meta property="og:url" content="http://yoursite.com/2021/04/08/Java中的4中引用的差别和使用场景/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="小程序在4G网络下的加载超慢的解决方案">
+<meta property="og:description" content="Java中的4中引用的差别和使用场景一、强引用 特点  强引用不会被GC回收，当前内存不足的时候，JVM宁愿抛出java.lang.OutOfMemoryError: Java heap space让程序假死，也不会随意去回收具有强引用的对象 常见的强引用：把一个对象赋给引用变量，这个引用变量就是一个强引用，如果在不使用这个变量的时候，将这变量强制为null，可以被gc掉   代码： 123456">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-03-11T02:55:47.979Z">
+<meta property="og:image" content="http://yoursite.com/2021/04/08/img/image-20210407115420136.png">
+<meta property="og:image" content="http://yoursite.com/2021/04/08/img/image-20210407120113558.png">
+<meta property="og:updated_time" content="2021-04-08T03:20:59.906Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小程序在4G网络下的加载超慢的解决方案">
-<meta name="twitter:description" content="小程序在4G网络下的加载超慢的解决方案">
+<meta name="twitter:title" content="Java中的4中引用的差别和使用场景">
+<meta name="twitter:description" content="Java中的4中引用的差别和使用场景一、强引用 特点  强引用不会被GC回收，当前内存不足的时候，JVM宁愿抛出java.lang.OutOfMemoryError: Java heap space让程序假死，也不会随意去回收具有强引用的对象 常见的强引用：把一个对象赋给引用变量，这个引用变量就是一个强引用，如果在不使用这个变量的时候，将这变量强制为null，可以被gc掉   代码： 123456">
+<meta name="twitter:image" content="http://yoursite.com/2021/04/08/img/image-20210407115420136.png">
   
     <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
   
@@ -154,27 +157,82 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-小程序在非wifi加载缓慢问题" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java中的4中引用的差别和使用场景" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      小程序在4G网络下的加载超慢的解决方案
+      Java中的4中引用的差别和使用场景
     </h1>
   
 
         
-        <a href="/2020/03/10/小程序在非wifi加载缓慢问题/" class="archive-article-date">
-  	<time datetime="2020-03-10T02:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-10</time>
+        <a href="/2021/04/08/Java中的4中引用的差别和使用场景/" class="archive-article-date">
+  	<time datetime="2021-04-08T03:09:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="小程序在4G网络下的加载超慢的解决方案"><a href="#小程序在4G网络下的加载超慢的解决方案" class="headerlink" title="小程序在4G网络下的加载超慢的解决方案"></a>小程序在4G网络下的加载超慢的解决方案</h1>
+        <h1 id="Java中的4中引用的差别和使用场景"><a href="#Java中的4中引用的差别和使用场景" class="headerlink" title="Java中的4中引用的差别和使用场景"></a>Java中的4中引用的差别和使用场景</h1><h3 id="一、强引用"><a href="#一、强引用" class="headerlink" title="一、强引用"></a>一、强引用</h3><ol>
+<li><p>特点</p>
+<ul>
+<li>强引用不会被GC回收，当前内存不足的时候，JVM宁愿抛出java.lang.OutOfMemoryError: Java heap space让程序假死，也不会随意去回收具有强引用的对象</li>
+<li>常见的强引用：把一个对象赋给引用变量，这个引用变量就是一个强引用，如果在不使用这个变量的时候，将这变量强制为null，可以被gc掉</li>
+</ul>
+</li>
+<li><p>代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> yixiangfeng</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@ClassName</span> StrongRef</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span> 强引用</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@CreateTime</span>  下午2:34</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StrongRef</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">        <span class="keyword">private</span> Integer userId;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> String userName;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">(Integer userId,String userName)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.userId = userId;</span><br><span class="line">            <span class="keyword">this</span>.userName = userName;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"User&#123;"</span> +</span><br><span class="line">                    <span class="string">"userId="</span> + userId +</span><br><span class="line">                    <span class="string">", userName='"</span> + userName + <span class="string">'\''</span> +</span><br><span class="line">                    <span class="string">'&#125;'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        User user = <span class="keyword">new</span> User(<span class="number">1</span>, <span class="string">"zhaoliu"</span>);</span><br><span class="line">        User strongUser = user;</span><br><span class="line">        System.out.println(<span class="string">"Before GC"</span>);</span><br><span class="line">        System.out.println(user);</span><br><span class="line">        user = <span class="keyword">null</span>;</span><br><span class="line">        System.gc();</span><br><span class="line">        System.out.println(<span class="string">"After GC"</span>);</span><br><span class="line">        System.out.println(strongUser);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="二、弱引用"><a href="#二、弱引用" class="headerlink" title="二、弱引用"></a>二、弱引用</h3><ol>
+<li><p>特点:</p>
+<ul>
+<li>弱引用需要用WeakReference类来实现。比软引用的生存期更短，对于只有弱引用的对象。只要垃圾回收机制一运行，不管JVM的内存空间是否足够。总会回收该对象占用的内存</li>
+<li>Weak引用对象常用于Map数据结构中，引用占用内存空间较大的对象</li>
+</ul>
+</li>
+<li><p>代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> top.yxf.jvm;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.ref.WeakReference;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> yixiangfeng</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@ClassName</span> WeakRef</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span> 虚引用</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@CreateTime</span>  下午5:08</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WeakRef</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">        <span class="keyword">private</span> Integer userId;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> String userName;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">(Integer userId,String userName)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.userId = userId;</span><br><span class="line">            <span class="keyword">this</span>.userName = userName;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"User&#123;"</span> +</span><br><span class="line">                    <span class="string">"userId="</span> + userId +</span><br><span class="line">                    <span class="string">", userName='"</span> + userName + <span class="string">'\''</span> +</span><br><span class="line">                    <span class="string">'&#125;'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        User user = <span class="keyword">new</span> User(<span class="number">1</span>,<span class="string">"zhangsan"</span>);</span><br><span class="line">        WeakReference&lt;User&gt; reference = <span class="keyword">new</span> WeakReference&lt;&gt;(user);</span><br><span class="line">        user = <span class="keyword">null</span>;</span><br><span class="line">        System.out.println(<span class="string">"Before GC"</span>);</span><br><span class="line">        System.out.println(reference.get());</span><br><span class="line">        System.gc();</span><br><span class="line">        System.out.println(<span class="string">"After GC"</span>);</span><br><span class="line">        System.out.println(reference.get());</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">## 输出结果</span><br><span class="line">Before GC</span><br><span class="line">User&#123;userId=<span class="number">1</span>, userName=<span class="string">'zhangsan'</span>&#125;</span><br><span class="line">After GC</span><br><span class="line"><span class="keyword">null</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="三、软引用"><a href="#三、软引用" class="headerlink" title="三、软引用"></a>三、软引用</h3><ol>
+<li><p>特点</p>
+<ul>
+<li>软引用需要用SoftReference类实现。</li>
+<li>当系统内存足够时它不会被回收。</li>
+</ul>
+</li>
+<li><p>代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> yixiangfeng</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@ClassName</span> SoftRef</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span> 软引用</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@CreateTime</span>  上午11:47</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SoftRef</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">        <span class="keyword">private</span> Integer userId;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> String userName;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">(Integer userId,String userName)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.userId = userId;</span><br><span class="line">            <span class="keyword">this</span>.userName = userName;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"User&#123;"</span> +</span><br><span class="line">                    <span class="string">"userId="</span> + userId +</span><br><span class="line">                    <span class="string">", userName='"</span> + userName + <span class="string">'\''</span> +</span><br><span class="line">                    <span class="string">'&#125;'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        User lisi = <span class="keyword">new</span> User(<span class="number">1</span>, <span class="string">"lisi"</span>);</span><br><span class="line">        SoftReference&lt;User&gt; softReference = <span class="keyword">new</span> SoftReference(lisi);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"Before gc"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(softReference.get());</span><br><span class="line">        lisi = <span class="keyword">null</span>;</span><br><span class="line">        System.gc();</span><br><span class="line">        System.out.println(<span class="string">"After gc"</span>);</span><br><span class="line">        System.out.println(softReference.get());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 输出结果</span><br><span class="line">Before gc</span><br><span class="line">User&#123;userId=<span class="number">1</span>, userName=<span class="string">'lisi'</span>&#125;</span><br><span class="line">After gc</span><br><span class="line">User&#123;userId=<span class="number">1</span>, userName=<span class="string">'lisi'</span>&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="四、虚引用"><a href="#四、虚引用" class="headerlink" title="四、虚引用"></a>四、虚引用</h3><ol>
+<li><p>特点</p>
+<ul>
+<li>虚引用需要PhantomReference类实现，它不能单独使用，必须和引用队列联合使用。</li>
+<li>虚引用的主要作用是跟踪对象被垃圾回收的状态。</li>
+<li>主要是跟踪对象被垃圾回收的状态</li>
+</ul>
+</li>
+<li><p>代码：</p>
+<ol>
+<li><p>PhantomReference源码：</p>
+<p><img src="../img/image-20210407115420136.png" alt="image-20210407115420136"></p>
+<p><img src="../img/image-20210407120113558.png" alt="image-20210407120113558"></p>
+<p>从源码可以看出，始终获取的都是null。注释提示：</p>
+<p>Returns this reference object’s referent.  Because the referent of a phantom reference is always inaccessible, this method always returns null （返回此引用对象的引用对象，因为幻想引用的引用对象始终不可访问，所以此方法始终返回的是null）</p>
+</li>
+<li><p>实现</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> yixiangfeng</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@ClassName</span> PhantomRef</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span> 虚引用</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@CreateTime</span>  上午11:49</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PhantomRef</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">        <span class="keyword">private</span> Integer userId;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> String userName;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">(Integer userId,String userName)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.userId = userId;</span><br><span class="line">            <span class="keyword">this</span>.userName = userName;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"User&#123;"</span> +</span><br><span class="line">                    <span class="string">"userId="</span> + userId +</span><br><span class="line">                    <span class="string">", userName='"</span> + userName + <span class="string">'\''</span> +</span><br><span class="line">                    <span class="string">'&#125;'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        User wangwu = <span class="keyword">new</span> User(<span class="number">1</span>, <span class="string">"wangwu"</span>);</span><br><span class="line">        ReferenceQueue&lt;User&gt; queue = <span class="keyword">new</span> ReferenceQueue&lt;&gt;();</span><br><span class="line">        PhantomReference&lt;User&gt; phantomReference = <span class="keyword">new</span> PhantomReference&lt;&gt;(wangwu,queue);</span><br><span class="line">        System.out.println(<span class="string">"Before gc"</span>);</span><br><span class="line"> System.out.println(phantomReference.get());</span><br><span class="line">        System.out.println(queue.poll().get());</span><br><span class="line">        wangwu = <span class="keyword">null</span>;</span><br><span class="line">        System.gc();</span><br><span class="line">        System.out.println(<span class="string">"After gc"</span>);</span><br><span class="line"> System.out.println(phantomReference.get());</span><br><span class="line">        System.out.println(queue.poll());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 输出结果</span><br><span class="line">Before gc</span><br><span class="line"><span class="keyword">null</span></span><br><span class="line">After gc</span><br><span class="line"><span class="keyword">null</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+
       
 
       
@@ -253,7 +311,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/10/小程序在非wifi加载缓慢问题/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/04/08/Java中的4中引用的差别和使用场景/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -265,25 +323,6 @@
 </article>
 
   
-<nav id="article-nav">
-  
-    <a href="/2020/03/20/jmeter测压软件的使用/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Jmeter软件测试简单的使用.md
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/06/25/面试常遇问题/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">面试常遇问题.md</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -321,7 +360,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 一乡风
+    		&copy; 2021 一乡风
     	</div>
       	<div class="footer-right">
       	    <!-- <span class="author" itemprop="copyinghtHolder">hi {{theme.footer.copyright || config.author}} </span> -->
@@ -402,14 +441,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">测压一些基础知识</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">面试常遇问题</a>
-              </li>
             
             <div class="clearfix"></div>
           </ul>
