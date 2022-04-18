@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Java," />
 
 
 
@@ -77,14 +77,17 @@
 
 
 
-<meta name="description" content="Keep learning and sharing">
-<meta property="og:type" content="website">
-<meta property="og:title" content="一乡风博客">
-<meta property="og:url" content="http://example.com/tags/%E8%BF%90%E7%BB%B4/index.html">
+<meta name="description" content="Arthas 使用教程1、dashboard 通过命令可以查看当前系统实时数据面板 通过q或者ctrl + c可以退出dashboard 命令。  2、thead thread 1 命令会打印线程ID1的栈 Archas 支持管道，可以通过thread 1 | grep ‘main(‘ 查询到main class ，  3、 sc 可以通过sc命令查询jvm里加载的类 &#x3D;&#x3D;sc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Arthas使用教程第一章">
+<meta property="og:url" content="http://example.com/2022/04/18/Arthas%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E7%AC%AC%E4%B8%80%E7%AB%A0/index.html">
 <meta property="og:site_name" content="一乡风博客">
-<meta property="og:description" content="Keep learning and sharing">
+<meta property="og:description" content="Arthas 使用教程1、dashboard 通过命令可以查看当前系统实时数据面板 通过q或者ctrl + c可以退出dashboard 命令。  2、thead thread 1 命令会打印线程ID1的栈 Archas 支持管道，可以通过thread 1 | grep ‘main(‘ 查询到main class ，  3、 sc 可以通过sc命令查询jvm里加载的类 &#x3D;&#x3D;sc">
 <meta property="og:locale">
+<meta property="article:published_time" content="2022-04-18T08:58:38.000Z">
+<meta property="article:modified_time" content="2022-04-18T10:03:34.580Z">
 <meta property="article:author" content="xs.wu">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
 
 
@@ -115,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://example.com/tags/运维/"/>
+  <link rel="canonical" href="http://example.com/2022/04/18/Arthas使用教程第一章/"/>
 
 
 
 
 
-  <title>标签: 运维 | 一乡风博客</title>
+  <title>Arthas使用教程第一章 | 一乡风博客</title>
   
 
 
@@ -140,7 +143,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -268,54 +271,251 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>运维<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/18/Arthas%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E7%AC%AC%E4%B8%80%E7%AB%A0/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一乡风博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2022/04/17/Docker%E6%90%AD%E5%BB%BAmysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/" itemprop="url">
-              
-                <span itemprop="name">Docker搭建mysql主从复制</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Arthas使用教程第一章</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-04-17T15:05:40+08:00"
-              content="2022-04-17" >
-          04-17
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-04-18T16:58:38+08:00">
+                2022-04-18
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8E%92%E9%94%99/" itemprop="url" rel="index">
+                    <span itemprop="name">排错</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2022/04/18/Arthas%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E7%AC%AC%E4%B8%80%E7%AB%A0/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2022/04/18/Arthas使用教程第一章/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+         
+  	   <span class="post-meta-divider">|</span>
+ 	   <span id="busuanzi_value_page_pv"></span>次阅读
+	 
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Arthas-使用教程"><a href="#Arthas-使用教程" class="headerlink" title="Arthas 使用教程"></a>Arthas 使用教程</h1><h3 id="1、dashboard"><a href="#1、dashboard" class="headerlink" title="1、dashboard"></a>1、dashboard</h3><ol>
+<li>通过命令可以查看当前系统实时数据面板</li>
+<li>通过q或者ctrl + c可以退出dashboard 命令。</li>
+</ol>
+<h3 id="2、thead"><a href="#2、thead" class="headerlink" title="2、thead"></a>2、thead</h3><ol>
+<li>thread 1 命令会打印线程ID1的栈</li>
+<li>Archas 支持管道，可以通过thread 1 | grep ‘main(‘ 查询到main class ，</li>
+</ol>
+<h3 id="3、-sc"><a href="#3、-sc" class="headerlink" title="3、 sc"></a>3、 sc</h3><ol>
+<li>可以通过sc命令查询jvm里加载的类 &#x3D;&#x3D;sc -d *className&#x3D;&#x3D;</li>
+<li>-d : 打印出类加载的具体信息</li>
+<li>可以支持通配符查询</li>
+</ol>
+<h3 id="4、jad"><a href="#4、jad" class="headerlink" title="4、jad"></a>4、jad</h3><ol>
+<li>反编译代码</li>
+<li>–source-only ： 可以只打印在反编译的源代码</li>
+</ol>
+<h3 id="5、watch"><a href="#5、watch" class="headerlink" title="5、watch"></a>5、watch</h3><ol>
+<li>通过watch 命令实时可以查看函数参数&#x2F;返回值&#x2F;异常信息</li>
+<li>&#x3D;&#x3D;watch packageName.className methodName returnObj;&#x3D;&#x3D;</li>
+</ol>
+<h3 id="6、vmtool"><a href="#6、vmtool" class="headerlink" title="6、vmtool"></a>6、vmtool</h3><ol>
+<li>通过vmtool命令可以搜索内存对象</li>
+<li>&#x3D;&#x3D; vmtool –action getInstances –className java.lang.String – limit 10&#x3D;&#x3D;</li>
+</ol>
+<h3 id="7、Exit-x2F-stop"><a href="#7、Exit-x2F-stop" class="headerlink" title="7、Exit&#x2F;stop"></a>7、Exit&#x2F;stop</h3><ol>
+<li>退出Arthas，退出后可以再次使用java -jar archas.jar 连接</li>
+<li>彻底退出arthas exit&#x2F;quit 只是退出当前session，arthas server 还在目标进程中进行。想要完全退出Arthas 可以执行stop命令</li>
+</ol>
+<h3 id="8、sm"><a href="#8、sm" class="headerlink" title="8、sm"></a>8、sm</h3><ol>
+<li>sm命令查找类的具体函数 sm java.math.RoundingMode</li>
+<li>-d ： 打印函数的具体属性 sm -d java.math.RoundingMode</li>
+<li>也可以查询指定的函数 java.math.RoundingMode <init></li>
+</ol>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享,您的支持将鼓励我继续创作</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt=" 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2022/04/17/Docker%E6%90%AD%E5%BB%BAmysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/" rel="next" title="Docker搭建mysql主从复制">
+                <i class="fa fa-chevron-left"></i> Docker搭建mysql主从复制
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2022/04/18/Arthas%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E7%AC%AC%E4%BA%8C%E7%AB%A0/" rel="prev" title="Arthas使用教程第二章">
+                Arthas使用教程第二章 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -323,6 +523,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -343,8 +557,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -436,6 +659,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Arthas-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">Arthas 使用教程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81dashboard"><span class="nav-number">1.0.1.</span> <span class="nav-text">1、dashboard</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81thead"><span class="nav-number">1.0.2.</span> <span class="nav-text">2、thead</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81-sc"><span class="nav-number">1.0.3.</span> <span class="nav-text">3、 sc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81jad"><span class="nav-number">1.0.4.</span> <span class="nav-text">4、jad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5%E3%80%81watch"><span class="nav-number">1.0.5.</span> <span class="nav-text">5、watch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6%E3%80%81vmtool"><span class="nav-number">1.0.6.</span> <span class="nav-text">6、vmtool</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7%E3%80%81Exit-x2F-stop"><span class="nav-number">1.0.7.</span> <span class="nav-text">7、Exit&#x2F;stop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8%E3%80%81sm"><span class="nav-number">1.0.8.</span> <span class="nav-text">8、sm</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -575,6 +814,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -592,6 +835,18 @@
       <script id="dsq-count-scr" src="https://留言.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://example.com/2022/04/18/Arthas%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E7%AC%AC%E4%B8%80%E7%AB%A0/';
+          this.page.identifier = '2022/04/18/Arthas使用教程第一章/';
+          this.page.title = 'Arthas使用教程第一章';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://留言.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   

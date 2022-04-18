@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="运维," />
+  <meta name="keywords" content="Java," />
 
 
 
@@ -77,25 +77,36 @@
 
 
 
-<meta name="description" content="一、通过docker拉去mysql镜像 docker pull mysql:5.7  二、启动主mysql服务 启动主mysql 服务 123456789101112docker run -p 3307:3306 --name mysql-master \-v &#x2F;mydata&#x2F;mysql-master&#x2F;log:&#x2F;var&#x2F;log&#x2F;mysql \-v &#x2F;mydata&#x2F;mysql-master&#x2F;data">
+<meta name="description" content="案例1 [查询用户信息详情为例] 首先通过curl 访问接口服务地址 curl 接口服务地址 curl httl:&#x2F;&#x2F;localhost:8080&#x2F;user&#x2F;0  打开一个new terminal 使用watch命令 watch packageName.UserController * ‘{params, throwExp}’; 第一个参数是类型 支持通配">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Docker搭建mysql主从复制">
-<meta property="og:url" content="http://example.com/2022/04/17/Docker%E6%90%AD%E5%BB%BAmysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/index.html">
+<meta property="og:title" content="Arthas案例分析">
+<meta property="og:url" content="http://example.com/2022/04/18/Arthas%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/index.html">
 <meta property="og:site_name" content="一乡风博客">
-<meta property="og:description" content="一、通过docker拉去mysql镜像 docker pull mysql:5.7  二、启动主mysql服务 启动主mysql 服务 123456789101112docker run -p 3307:3306 --name mysql-master \-v &#x2F;mydata&#x2F;mysql-master&#x2F;log:&#x2F;var&#x2F;log&#x2F;mysql \-v &#x2F;mydata&#x2F;mysql-master&#x2F;data">
+<meta property="og:description" content="案例1 [查询用户信息详情为例] 首先通过curl 访问接口服务地址 curl 接口服务地址 curl httl:&#x2F;&#x2F;localhost:8080&#x2F;user&#x2F;0  打开一个new terminal 使用watch命令 watch packageName.UserController * ‘{params, throwExp}’; 第一个参数是类型 支持通配">
 <meta property="og:locale">
-<meta property="og:image" content="http://example.com/images/imagi-20210401113202243.png">
-<meta property="og:image" content="http://example.com/images/image-20210401113252684.png">
-<meta property="og:image" content="http://example.com/images/image-20210401114807485.png">
-<meta property="og:image" content="http://example.com/images/image-20210401114044535.png">
-<meta property="og:image" content="http://example.com/images/image-20210401114456682.png">
-<meta property="og:image" content="http://example.com/images/image-20210401115118759.png">
-<meta property="article:published_time" content="2022-04-17T07:05:40.000Z">
-<meta property="article:modified_time" content="2022-04-17T07:36:46.712Z">
+<meta property="og:image" content="http://example.com/images/image-20211125120217655.png">
+<meta property="og:image" content="http://example.com/images/image-20211125120456353.png">
+<meta property="og:image" content="http://example.com/images/image-20211125121238734.png">
+<meta property="og:image" content="http://example.com/images/image-20211125123026712.png">
+<meta property="og:image" content="http://example.com/images/image-20211125123503066.png">
+<meta property="og:image" content="http://example.com/images/image-20211125123619517.png">
+<meta property="og:image" content="http://example.com/images/image-20211125123815136.png">
+<meta property="og:image" content="http://example.com/images/image-20211125133400839.png">
+<meta property="og:image" content="http://example.com/images/image-20211125133616701.png">
+<meta property="og:image" content="http://example.com/images/image-20211125133806053.png">
+<meta property="og:image" content="http://example.com/images/image-20211125134509544.png">
+<meta property="og:image" content="http://example.com/images/image-20211125134709827.png">
+<meta property="og:image" content="http://example.com/images/image-20211125135238722.png">
+<meta property="og:image" content="http://example.com/images/image-20211125135209283.png">
+<meta property="og:image" content="http://example.com/images/image-20211125135335952.png">
+<meta property="og:image" content="http://example.com/images/image-20211125135736470.png">
+<meta property="og:image" content="http://example.com/images/image-20211125140253114.png">
+<meta property="article:published_time" content="2022-04-18T09:21:11.000Z">
+<meta property="article:modified_time" content="2022-04-18T10:04:50.885Z">
 <meta property="article:author" content="xs.wu">
-<meta property="article:tag" content="运维">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/imagi-20210401113202243.png">
+<meta name="twitter:image" content="http://example.com/images/image-20211125120217655.png">
 
 
 
@@ -125,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://example.com/2022/04/17/Docker搭建mysql主从复制/"/>
+  <link rel="canonical" href="http://example.com/2022/04/18/Arthas案例分析/"/>
 
 
 
 
 
-  <title>Docker搭建mysql主从复制 | 一乡风博客</title>
+  <title>Arthas案例分析 | 一乡风博客</title>
   
 
 
@@ -292,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/17/Docker%E6%90%AD%E5%BB%BAmysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/18/Arthas%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -309,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Docker搭建mysql主从复制</h1>
+          <h1 class="post-title" itemprop="name headline">Arthas案例分析</h1>
         
 
         <div class="post-meta">
@@ -321,8 +332,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-04-17T15:05:40+08:00">
-                2022-04-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-04-18T17:21:11+08:00">
+                2022-04-18
               </time>
             
 
@@ -332,6 +343,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8E%92%E9%94%99/" itemprop="url" rel="index">
+                    <span itemprop="name">排错</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -340,9 +373,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2022/04/17/Docker%E6%90%AD%E5%BB%BAmysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/#comments" itemprop="discussionUrl">
+                <a href="/2022/04/18/Arthas%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2022/04/17/Docker搭建mysql主从复制/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2022/04/18/Arthas案例分析/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -375,72 +408,221 @@
       
 
       
-        <h3 id="一、通过docker拉去mysql镜像"><a href="#一、通过docker拉去mysql镜像" class="headerlink" title="一、通过docker拉去mysql镜像"></a>一、通过docker拉去mysql镜像</h3><ol>
-<li>docker pull mysql:5.7</li>
-</ol>
-<h3 id="二、启动主mysql服务"><a href="#二、启动主mysql服务" class="headerlink" title="二、启动主mysql服务"></a>二、启动主mysql服务</h3><ol>
-<li><p>启动主mysql 服务</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 3307:3306 --name mysql-master \</span><br><span class="line">-v /mydata/mysql-master/log:/var/log/mysql \</span><br><span class="line">-v /mydata/mysql-master/data:/var/lib/mysql \</span><br><span class="line">-v /mydata/mysql-master/conf:/etc/mysql \</span><br><span class="line">-e MYSQL_ROOT_PASSWORD=root  \</span><br><span class="line">-d mysql:5.7</span><br><span class="line"></span><br><span class="line">参数解释</span><br><span class="line">	-p 指定端口 映射端口:主机端口</span><br><span class="line">	--name 指定启动镜像别名</span><br><span class="line">	-v 挂载目录（数据卷）</span><br><span class="line">	-d 后台启动</span><br></pre></td></tr></table></figure>
+        <h3 id="案例1-查询用户信息详情为例"><a href="#案例1-查询用户信息详情为例" class="headerlink" title="案例1 [查询用户信息详情为例]"></a>案例1 [查询用户信息详情为例]</h3><ol>
+<li><p>首先通过curl 访问接口服务地址</p>
+<p>curl 接口服务地址</p>
+<p>curl httl:&#x2F;&#x2F;localhost:8080&#x2F;user&#x2F;0</p>
 </li>
-<li><p>在mysql的配置文件夹<code>/mydata/mysql-master/conf</code>中创建一个配置文件<code>my.cnf</code>：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">1、进入目录 cd /mydata/mysql-master/conf</span><br><span class="line">2、使用命令 vim my.cnf</span><br><span class="line"></span><br><span class="line">[mysqld]</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 设置server_id，同一局域网中需要唯一</span></span></span><br><span class="line">server_id=101</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 指定不需要同步的数据库名称</span></span></span><br><span class="line">binlog-ignore-db=mysql</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 开启二进制日志功能</span></span></span><br><span class="line">log-bin=mall-mysql-bin</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 设置二进制日志使用内存大小（事务）</span></span></span><br><span class="line">binlog_cache_size=1M</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 设置使用的二进制日志格式（mixed,statement,row）</span></span></span><br><span class="line">binlog_format=mixed</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 二进制日志过期清理时间。默认值为0，表示不自动清理。</span></span></span><br><span class="line">expire_logs_days=7</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 跳过主从复制中遇到的所有错误或指定类型的错误，避免slave端复制中断。</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 如：1062错误是指一些主键重复，1032错误是因为主从数据库数据不一致</span></span></span><br><span class="line">slave_skip_errors=1062</span><br><span class="line"></span><br><span class="line">init_connect=&#x27;SET collation_connection = utf8_unicode_ci&#x27;</span><br><span class="line">init_connect=&#x27;SET collation_connection = utf8_unicode_ci&#x27;</span><br><span class="line">init_connect=&#x27;SET NAMES utf8&#x27;</span><br><span class="line">character-set-server=utf8</span><br><span class="line">collation-server=utf8_unicode_ci</span><br><span class="line">skip-character-set-client-handshake</span><br><span class="line">skip-name-resolve</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 指定字符集</span></span></span><br><span class="line">[client]</span><br><span class="line">default-character-set=utf8</span><br><span class="line">[mysql]</span><br><span class="line">default-character-set=utf8</span><br></pre></td></tr></table></figure>
+<li><p>打开一个new terminal 使用watch命令</p>
+<p>watch packageName.UserController * ‘{params, throwExp}’;</p>
+<p>第一个参数是类型 支持通配</p>
+<p>第二个参数是函数名 支持通配</p>
+<p>访问接口服务地址 watch 命令会打印调用参数和异常</p>
+<p><img src="/../../../images/image-20211125120217655.png" alt="image-20211125120217655"></p>
+<p>可以看到实际抛出的异常是<code>IllegalArgumentException</code></p>
+<p>可以通过q或者ctrl+c退出watch命令模式</p>
+<p>如果想把获取的结果展开 可以用 <code>-x</code>参数：</p>
+<p><img src="/../../../images/image-20211125120456353.png" alt="image-20211125120456353"></p>
 </li>
-<li><p>重启mysql-master实例：<font color="#FF0000">docker restart mysql-master</font></p>
-</li>
-<li><p>进入mysql-master容器：<font color="#FF0000">docker exec -it mysql-master &#x2F;bin&#x2F;bash</font></p>
-<p><img src="/../../../images/imagi-20210401113202243.png" alt="image-20210401113202243"></p>
-</li>
-<li><p>进入容器后输入mysql -uroot -proot</p>
-<p><img src="/../../../images/image-20210401113252684.png" alt="image-20210401113252684"></p>
-</li>
-<li><p>创建数据同步用户</p>
+<li><p>返回值表达式</p>
 <ol>
-<li><p>命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CREATE USER &#x27;slave&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;123456&#x27;;</span><br><span class="line">GRANT REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO &#x27;slave&#x27;@&#x27;%&#x27;;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 到时候创建的这个用户需要对应配置从服务器里面参数的master_user和master_password</span></span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><img src="/../../../images/image-20210401114807485.png" alt="image-20210401114807485"></p>
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="三、-启动从mysql服务"><a href="#三、-启动从mysql服务" class="headerlink" title="三、 启动从mysql服务"></a>三、 启动从mysql服务</h3><ol>
-<li><p>服务启动</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 3308:3306 --name mysql-slave \</span><br><span class="line">-v /mydata/mysql-slave/log:/var/log/mysql \</span><br><span class="line">-v /mydata/mysql-slave/data:/var/lib/mysql \</span><br><span class="line">-v /mydata/mysql-slave/conf:/etc/mysql \</span><br><span class="line">-e MYSQL_ROOT_PASSWORD=root  \</span><br><span class="line">-d mysql:5.7</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在mysql的配置文件夹<code>/mydata/mysql-slave/conf</code>中创建一个配置文件<code>my.cnf</code>：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">1、进入目录 cd /mydata/mysql-master/conf</span><br><span class="line">2、使用命令 vim my.cnf</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 设置server_id，同一局域网中需要唯一</span></span></span><br><span class="line">server_id=102</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 指定不需要同步的数据库名称</span></span></span><br><span class="line">binlog-ignore-db=mysql</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 开启二进制日志功能，以备Slave作为其它数据库实例的Master时使用</span></span></span><br><span class="line">log-bin=mall-mysql-slave1-bin</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 设置二进制日志使用内存大小（事务）</span></span></span><br><span class="line">binlog_cache_size=1M</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 设置使用的二进制日志格式（mixed,statement,row）</span></span></span><br><span class="line">binlog_format=mixed</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 二进制日志过期清理时间。默认值为0，表示不自动清理。</span></span></span><br><span class="line">expire_logs_days=7</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 跳过主从复制中遇到的所有错误或指定类型的错误，避免slave端复制中断。</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># 如：1062错误是指一些主键重复，1032错误是因为主从数据库数据不一致</span></span></span><br><span class="line">slave_skip_errors=1062</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># relay_log配置中继日志</span></span></span><br><span class="line">relay_log=mall-mysql-relay-bin</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># log_slave_updates表示slave将复制事件写进自己的二进制日志</span></span></span><br><span class="line">log_slave_updates=1</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment"># slave设置为只读（具有super权限的用户除外）</span></span></span><br><span class="line">read_only=1</span><br><span class="line"></span><br><span class="line">init_connect=&#x27;SET collation_connection = utf8_unicode_ci&#x27;</span><br><span class="line">init_connect=&#x27;SET collation_connection = utf8_unicode_ci&#x27;</span><br><span class="line">init_connect=&#x27;SET NAMES utf8&#x27;</span><br><span class="line">character-set-server=utf8</span><br><span class="line">collation-server=utf8_unicode_ci</span><br><span class="line">skip-character-set-client-handshake</span><br><span class="line">skip-name-resolve</span><br><span class="line"></span><br><span class="line">[client]</span><br><span class="line">default-character-set=utf8</span><br><span class="line">[mysql]</span><br><span class="line">default-character-set=utf8 </span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重启mysql-slave实例：<font color="#FF0000">docker restart mysql-slave</font></p>
+<li><p>第三个参数是<code>返回值表达式</code>，实际是一个ognl表达式，支持一些内置对象</p>
 <ol>
-<li>查询主数据状态：<font color="#FF0000">show master status</font></li>
+<li>loader</li>
+<li>clazz</li>
+<li>method</li>
+<li>target</li>
+<li>params</li>
+<li>returnObj</li>
+<li>throwExp</li>
+<li>isBeore</li>
+<li>isThrow</li>
+<li>isReturn</li>
 </ol>
-<p><img src="/../../../images/image-20210401114044535.png" alt="image-20210401114044535"></p>
+<p>&#x3D;&#x3D; 可以利用这些内置对应对象组成不同表达式。&#x3D;&#x3D;</p>
 </li>
-<li><p>进入从mysql服务 <font color="#FF0000">docker exec -it mysql-slave &#x2F;bin&#x2F;bash</font></p>
+<li><p>比如返回一个数组</p>
+<ol>
+<li>watch com.example.demo.arthas.user.UserController * ‘{params[0], target, returnObj}’</li>
+</ol>
 </li>
-<li><p>连接mysql，输入</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">change master to master_host=&#x27;192.168.0.88&#x27;, master_user=&#x27;slave&#x27;, master_password=&#x27;123456&#x27;, master_port=3307, master_log_file=&#x27;mall-mysql-bin.000003&#x27;, master_log_pos=154, master_connect_retry=30;  </span><br></pre></td></tr></table></figure>
+</ol>
+</li>
+<li><p>条件表达式</p>
+<ol>
+<li><p>watch 命令支持第4个参数写表达式</p>
+</li>
+<li><p>watch com.example.demo.arthas.user.UserController * returnObj ‘params[0] &gt; 100’</p>
+<p>curl httl:&#x2F;&#x2F;localhost:8080&#x2F;user&#x2F;1 watch没有检测结果</p>
+<p>curl httl:&#x2F;&#x2F;localhost:8080&#x2F;user&#x2F;101 watch会有如下输出</p>
+<p><img src="/../../../images/image-20211125121238734.png" alt="image-20211125121238734"></p>
+</li>
+</ol>
+</li>
+<li><p>异常时捕获</p>
+<ol>
+<li>watch 命令支持<code>-e</code>选项 表示只捕获抛出异常的请求</li>
+<li>命令：watch com.example.demo.arthas.user.UserController * “{params[0],throwExp}” -e</li>
+</ol>
+</li>
+<li><p>按照耗时进行过滤</p>
+<ol>
+<li>watch 命令支持按请求耗时进行过滤</li>
+<li>命令：watch com.example.demo.arthas.user.UserController * ‘{params, returnObj}’ ‘#cost&gt;200’</li>
+</ol>
+</li>
+</ol>
+<h3 id="案例2-热更新代码"><a href="#案例2-热更新代码" class="headerlink" title="案例2[热更新代码]"></a>案例2[热更新代码]</h3><h4 id="下面通过jad-、-mc-、-redefine-命令实现动态更新代码的功能"><a href="#下面通过jad-、-mc-、-redefine-命令实现动态更新代码的功能" class="headerlink" title="下面通过jad 、 mc 、 redefine 命令实现动态更新代码的功能"></a>下面通过jad 、 mc 、 redefine 命令实现动态更新代码的功能</h4><p>情况分析：之前我们通过访问curl httl:&#x2F;&#x2F;localhost:8080&#x2F;user&#x2F;0 会出现一场情况。现在由于我们想避免这个异常且代码上线了我们如果去做呢？</p>
+<ol>
+<li><p>首先通过jad反编译UserCOntroller代码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jad --source-only com.example.demo.arthas.user.UserController &gt; /tmp/UserController.java</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用编辑器打开<code>/tmp/UserOController</code>代码</p>
+<p>vim &#x2F;temp&#x2F;UserController，修改成如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(value=&#123;&quot;/user/&#123;id&#125;&quot;&#125;)</span></span><br><span class="line"><span class="keyword">public</span> User <span class="title function_">findUserById</span><span class="params">(<span class="meta">@PathVariable</span> Integer id)</span> &#123;</span><br><span class="line">    logger.info(<span class="string">&quot;id: &#123;&#125;&quot;</span>, (Object)id);</span><br><span class="line">    <span class="keyword">if</span> (id != <span class="literal">null</span> &amp;&amp; id &lt; <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">User</span>(id, <span class="string">&quot;name&quot;</span> + id);</span><br><span class="line">        <span class="comment">// throw new IllegalArgumentException(&quot;id &lt; 1&quot;);</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">User</span>(id.intValue(), <span class="string">&quot;name&quot;</span> + id);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用sc查询加载UserController的ClassLoader</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sc -d *UserController | grep classLoaderHash</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用<code>mc</code>(Memory Compiler)命令来编译，并且通过<code>-c</code>或者<code>--classLoaderClass</code>参数指定ClassLoader：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mc --classLoaderClass org.springframework.boot.loader.LaunchedURLClassLoader /tmp/UserController.java -d /tmp</span><br><span class="line"></span><br><span class="line">也可以通过`mc -c &lt;classLoaderHash&gt; /tmp/UserController.java -d /tmp`，使用`-c`参数指定ClassLoaderHash:</span><br><span class="line"></span><br><span class="line">mc -c 1be6f5c3 /tmp/UserController.java -d /tmp</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在使用redefine命令重新加载新编译好的</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redefine /tmp/com/example/demo/arthas/user/UserController.class</span><br></pre></td></tr></table></figure>
 
-<p><img src="/../../../images/image-20210401114456682.png" alt="image-20210401114456682"></p>
-<p>参数命令详解</p>
+<p><img src="/../../../images/image-20211125123026712.png" alt="image-20211125123026712"></p>
+</li>
+<li><p>成功后你在访问 curl httl:&#x2F;&#x2F;localhost:8080&#x2F;user&#x2F;0 就不会有问题了</p>
+</li>
+</ol>
+<h3 id="案例3-动态更新应用Logger-Level-单个更新某个控制层的和更新项目所有的"><a href="#案例3-动态更新应用Logger-Level-单个更新某个控制层的和更新项目所有的" class="headerlink" title="案例3[动态更新应用Logger Level(单个更新某个控制层的和更新项目所有的)]"></a>案例3[动态更新应用Logger Level(单个更新某个控制层的和更新项目所有的)]</h3><ol>
+<li><p>查询UserController的ClassLoader</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sc -d com.example.demo.arthas.user.UserController | grep classLoaderHash</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../../../images/image-20211125123503066.png" alt="image-20211125123503066"></p>
+</li>
+<li><p>用ognl获取logger</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ognl --classLoaderClass org.springframework.boot.loader.LaunchedURLClassLoader &#x27;@com.example.demo.arthas.user.UserController@logger&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../../../images/image-20211125123619517.png" alt="image-20211125123619517"></p>
+<p>可以知道<code>UserController@logger</code>实际使用的是logback。可以看到<code>level=null</code>，则说明实际最终的level是从<code>root</code> logger里来的。</p>
+</li>
+<li><p>单独设置UserController的loggerLevel</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ognl --classLoaderClass org.springframework.boot.loader.LaunchedURLClassLoader &#x27;@com.example.demo.arthas.user.UserController@logger.setLevel(@ch.qos.logback.classic.Level@DEBUG)&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../../../images/image-20211125123815136.png" alt="image-20211125123815136"></p>
+</li>
+<li><p>修改全局的LoggerLevel</p>
+<p>通过获取<code>root</code> logger，可以修改全局的logger level：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ognl --classLoaderClass org.springframework.boot.loader.LaunchedURLClassLoader &#x27;@org.slf4j.LoggerFactory@getLogger(&quot;root&quot;).setLevel(@ch.qos.logback.classic.Level@DEBUG)&#x27;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="案例4-排除logger冲突问题"><a href="#案例4-排除logger冲突问题" class="headerlink" title="案例4[排除logger冲突问题]"></a>案例4[排除logger冲突问题]</h3><p>以<code>UserController</code>为例，它使用的是slf4j api，但实际使用到的logger系统是logback。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ognl --classLoaderClass org.springframework.boot.loader.LaunchedURLClassLoader &#x27;@com.example.demo.arthas.user.UserController@logger&#x27;</span><br></pre></td></tr></table></figure>
+
 <ol>
-<li>master_host：主数据库的IP地址；</li>
-<li>master_port：主数据库的运行端口；</li>
-<li>master_user：在主数据库创建的用于同步数据的用户账号；</li>
-<li>master_password：在主数据库创建的用于同步数据的用户密码；</li>
-<li>master_log_file：指定从数据库要复制数据的日志文件，通过查看主数据的状态，获取File参数；</li>
-<li>master_log_pos：指定从数据库从哪个位置开始复制数据，通过查看主数据的状态，获取Position参数；</li>
-<li>master_connect_retry：连接失败重试的时间间隔，单位为秒。</li>
-</ol>
+<li><p>获取logback实际加载的配置文件</p>
+<p>ognl –classLoaderClass org.springframework.boot.loader.LaunchedURLClassLoader ‘#map1&#x3D;@org.slf4j.LoggerFactory@getLogger(“root”).loggerContext.objectMap, #map1.get(“CONFIGURATION_WATCH_LIST”)’</p>
+<p><img src="/../../../images/image-20211125133400839.png" alt="image-20211125133400839"></p>
 </li>
-<li><p>查询从数据库状态： <font color="#FF0000">show slave status</font></p>
-<p><img src="/../../../images/image-20210401115118759.png" alt="image-20210401115118759"></p>
-<p>如果两个都为NO表示还没有开始同步，需要手动开启同步，使用命令：<font color="#FF0000">start slave</font></p>
-</li>
-<li><p>测试的话，你可以在你的主库创建一个数据库test，然后在主从mysql客户端输入命令 ：<font color="#FF0000">show databases</font></p>
+<li><p>使用classloader命令查询可能存在的logger配置文件</p>
+<p>classloader –classLoaderClass org.springframework.boot.loader.LaunchedURLClassLoader -r logback-spring.xml</p>
+<p><img src="/../../../images/image-20211125133616701.png" alt="image-20211125133616701"></p>
+<p>可以试着加载容易冲突的文件</p>
+<p>classloader –classLoaderClass org.springframework.boot.loader.LaunchedURLClassLoader -r logback.xml</p>
+<p>classloader –classLoaderClass org.springframework.boot.loader.LaunchedURLClassLoader -r log4j.properties</p>
+<p><img src="/../../../images/image-20211125133806053.png" alt="image-20211125133806053"></p>
 </li>
 </ol>
-<p>以上是搭建主从复制的简单流程</p>
+<h3 id="案例5-获取Spring-Context"><a href="#案例5-获取Spring-Context" class="headerlink" title="案例5[获取Spring Context]"></a>案例5[获取Spring Context]</h3><p>目的：展示获取Spring context 在获取bean， 然后调用函数</p>
+<ol>
+<li><p>使用tt命令获取到Spring Context</p>
+<ol>
+<li>tt是可以记录指定方法每次调用的入参和返回信息，并且能对这些不同的时间下调用进行观测</li>
+<li><a target="_blank" rel="noopener" href="https://arthas.aliyun.com/doc/tt.html">具体tt介绍</a></li>
+</ol>
+</li>
+<li><p><code>tt</code>命令捕获到了一个请求：：tt -t org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter invokeHandlerMethod</p>
+</li>
+<li><p>访问接口服务</p>
+<p><img src="/../../../images/image-20211125134509544.png" alt="image-20211125134509544"></p>
+</li>
+<li><p>使用tt命令从调用记录里获取到spring context：</p>
+<p>tt -i 1000 -w ‘target.getApplicationContext()’</p>
+</li>
+<li><p>获取springbean并调用函数</p>
+<p>tt -i 1000 -w ‘target.getApplicationContext().getBean(“helloWorldService”).getHelloMessage()’</p>
+<p><img src="/../../../images/image-20211125134709827.png" alt="image-20211125134709827"></p>
+</li>
+</ol>
+<h3 id="案例6-排查http请求返回401"><a href="#案例6-排查http请求返回401" class="headerlink" title="案例6[排查http请求返回401]"></a>案例6[排查http请求返回401]</h3><p>日常开发我们也会遇到401问题。如Something went wrong: 401 Unauthorized，我们现在想知道是哪个filter拦截了。怎么排查呢？</p>
+<ol>
+<li><p>跟踪所有的Filter函数</p>
+<p>trace javax.servlet.Fileter.* (trace和watch是一个监听命令)</p>
+<p>访问具体权限接口在terminal会打印filter内容</p>
+<p><img src="/../../../images/image-20211125135238722.png" alt="image-20211125135238722"></p>
+</li>
+<li><p>使用stack获取调用栈</p>
+<p>stack javax.servlet.http.HttpServletResponse sendError ‘params[0]&#x3D;&#x3D;401’</p>
+<p>访问权限接口</p>
+<p><img src="/../../../images/image-20211125135209283.png" alt="image-20211125135209283"></p>
+<p><img src="/../../../images/image-20211125135335952.png" alt="image-20211125135335952"><br>根据调用栈提示可以快速定位问题</p>
+</li>
+</ol>
+<h3 id="案例7-排查Http请求返回404"><a href="#案例7-排查Http请求返回404" class="headerlink" title="案例7[排查Http请求返回404]"></a>案例7[排查Http请求返回404]</h3><p>开发404常见，原因是资源找不到。那么到底是哪个servlet处理这个请求呢？</p>
+<ol>
+<li><p>跟踪所有的servlet函数</p>
+<p>trace javax.servlet.Servlet * &gt; &#x2F;tmp&#x2F;servlet.txt</p>
+<p>打开tmp文件夹中的servlet.txt查看</p>
+<p><img src="/../../../images/image-20211125135736470.png" alt="image-20211125135736470"></p>
+<p>可以定位到最终处理的是SpringFramework</p>
+</li>
+</ol>
+<h3 id="案例8-理解Spring-Boot应用的ClassLoader结构"><a href="#案例8-理解Spring-Boot应用的ClassLoader结构" class="headerlink" title="案例8[理解Spring Boot应用的ClassLoader结构]"></a>案例8[理解Spring Boot应用的ClassLoader结构]</h3><ol>
+<li><p>列出所有的ClassLoader</p>
+<p>classloader -l</p>
+</li>
+<li><p>列出上面的<code>org.apache.jasper.servlet.JasperLoader</code>加载的类：</p>
+<p>classloader -a –classLoaderClass org.apache.jasper.servlet.JasperLoader</p>
+<ul>
+<li>注：同ognl, 也可用<code>-c &lt;hashcode&gt;</code>而不用<code>--classLoaderClass</code>指定</li>
+</ul>
+</li>
+<li><p>反编译jsp代码</p>
+<p>jad org.apache.jsp.jsp.hello_jsp</p>
+</li>
+<li><p>查询ClassLoader树</p>
+<p>classloader -t</p>
+<p><img src="/../../../images/image-20211125140253114.png" alt="image-20211125140253114"></p>
+</li>
+<li><p>列出ClassLoader的urls</p>
+<p>比如上面查看到的spring LaunchedURLClassLoader的 hashcode是<code>1be6f5c3</code>，可以通过<code>-c</code>或者<code>--classLoaderClass</code>参数来列出它的所有urls：</p>
+<p>classloader –classLoaderClass</p>
+</li>
+<li><p>加载指定ClassLoader里的资源文件</p>
+<p>classloader –classLoaderClass org.springframework.boot.loader.LaunchedURLClassLoader -r logback-spring.xml</p>
+</li>
+<li><p>尝试加载指定的类</p>
+<p>比如用上面的spring LaunchedURLClassLoader 尝试加载 <code>java.lang.String</code> ：</p>
+<p>classloader –classLoaderClass org.springframework.boot.loader.LaunchedURLClassLoader –load java.lang.String</p>
+</li>
+</ol>
+<h3 id="案例9-查询Top-N-线程"><a href="#案例9-查询Top-N-线程" class="headerlink" title="案例9[查询Top N 线程]"></a>案例9[查询Top N 线程]</h3><ol>
+<li><p>查询所有线程信息</p>
+<p>thread</p>
+</li>
+<li><p>查看具体线程的栈</p>
+<p>查询线程ID16的栈</p>
+<p>thread 16</p>
+</li>
+<li><p>查看CPU使用率top n 线程栈</p>
+<p>thread -n 3</p>
+<p>查询5秒内cpu使用率top n线程栈</p>
+<p>thread -n 3 -i 5000</p>
+</li>
+<li><p>查看线程是否有阻塞</p>
+<p>thread -b</p>
+</li>
+</ol>
 
       
     </div>
@@ -487,7 +669,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E8%BF%90%E7%BB%B4/" rel="tag"># 运维</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
         </div>
       
@@ -500,8 +682,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2022/04/17/jdk%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/" rel="next" title="jdk命令工具的使用">
-                <i class="fa fa-chevron-left"></i> jdk命令工具的使用
+              <a href="/2022/04/18/Arthas%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E7%AC%AC%E4%BA%8C%E7%AB%A0/" rel="next" title="Arthas使用教程第二章">
+                <i class="fa fa-chevron-left"></i> Arthas使用教程第二章
               </a>
             
           </div>
@@ -509,10 +691,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2022/04/18/Arthas%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%E7%AC%AC%E4%B8%80%E7%AB%A0/" rel="prev" title="Arthas使用教程第一章">
-                Arthas使用教程第一章 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -686,7 +864,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E9%80%9A%E8%BF%87docker%E6%8B%89%E5%8E%BBmysql%E9%95%9C%E5%83%8F"><span class="nav-number">1.</span> <span class="nav-text">一、通过docker拉去mysql镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%90%AF%E5%8A%A8%E4%B8%BBmysql%E6%9C%8D%E5%8A%A1"><span class="nav-number">2.</span> <span class="nav-text">二、启动主mysql服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81-%E5%90%AF%E5%8A%A8%E4%BB%8Emysql%E6%9C%8D%E5%8A%A1"><span class="nav-number">3.</span> <span class="nav-text">三、 启动从mysql服务</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B1-%E6%9F%A5%E8%AF%A2%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E8%AF%A6%E6%83%85%E4%B8%BA%E4%BE%8B"><span class="nav-number">1.</span> <span class="nav-text">案例1 [查询用户信息详情为例]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B2-%E7%83%AD%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81"><span class="nav-number">2.</span> <span class="nav-text">案例2[热更新代码]</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E9%9D%A2%E9%80%9A%E8%BF%87jad-%E3%80%81-mc-%E3%80%81-redefine-%E5%91%BD%E4%BB%A4%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="nav-number">2.1.</span> <span class="nav-text">下面通过jad 、 mc 、 redefine 命令实现动态更新代码的功能</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B3-%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0%E5%BA%94%E7%94%A8Logger-Level-%E5%8D%95%E4%B8%AA%E6%9B%B4%E6%96%B0%E6%9F%90%E4%B8%AA%E6%8E%A7%E5%88%B6%E5%B1%82%E7%9A%84%E5%92%8C%E6%9B%B4%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%89%80%E6%9C%89%E7%9A%84"><span class="nav-number">3.</span> <span class="nav-text">案例3[动态更新应用Logger Level(单个更新某个控制层的和更新项目所有的)]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B4-%E6%8E%92%E9%99%A4logger%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">案例4[排除logger冲突问题]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B5-%E8%8E%B7%E5%8F%96Spring-Context"><span class="nav-number">5.</span> <span class="nav-text">案例5[获取Spring Context]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B6-%E6%8E%92%E6%9F%A5http%E8%AF%B7%E6%B1%82%E8%BF%94%E5%9B%9E401"><span class="nav-number">6.</span> <span class="nav-text">案例6[排查http请求返回401]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B7-%E6%8E%92%E6%9F%A5Http%E8%AF%B7%E6%B1%82%E8%BF%94%E5%9B%9E404"><span class="nav-number">7.</span> <span class="nav-text">案例7[排查Http请求返回404]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B8-%E7%90%86%E8%A7%A3Spring-Boot%E5%BA%94%E7%94%A8%E7%9A%84ClassLoader%E7%BB%93%E6%9E%84"><span class="nav-number">8.</span> <span class="nav-text">案例8[理解Spring Boot应用的ClassLoader结构]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B9-%E6%9F%A5%E8%AF%A2Top-N-%E7%BA%BF%E7%A8%8B"><span class="nav-number">9.</span> <span class="nav-text">案例9[查询Top N 线程]</span></a></li></ol></div>
             
 
           </div>
@@ -855,9 +1033,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://example.com/2022/04/17/Docker%E6%90%AD%E5%BB%BAmysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/';
-          this.page.identifier = '2022/04/17/Docker搭建mysql主从复制/';
-          this.page.title = 'Docker搭建mysql主从复制';
+          this.page.url = 'http://example.com/2022/04/18/Arthas%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90/';
+          this.page.identifier = '2022/04/18/Arthas案例分析/';
+          this.page.title = 'Arthas案例分析';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://留言.disqus.com/embed.js';
