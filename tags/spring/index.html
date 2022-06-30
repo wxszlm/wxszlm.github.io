@@ -80,7 +80,7 @@
 <meta name="description" content="Keep learning and sharing">
 <meta property="og:type" content="website">
 <meta property="og:title" content="一乡风博客">
-<meta property="og:url" content="http://example.com/tags/java/index.html">
+<meta property="og:url" content="http://example.com/tags/spring/index.html">
 <meta property="og:site_name" content="一乡风博客">
 <meta property="og:description" content="Keep learning and sharing">
 <meta property="og:locale">
@@ -115,13 +115,13 @@
 
 
 
-  <link rel="canonical" href="http://example.com/tags/java/"/>
+  <link rel="canonical" href="http://example.com/tags/spring/"/>
 
 
 
 
 
-  <title>标签: java | 一乡风博客</title>
+  <title>标签: spring | 一乡风博客</title>
   
 
 
@@ -275,7 +275,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>java<small>标签</small>
+        <h1>spring<small>标签</small>
         </h1>
       </div>
 
@@ -287,9 +287,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2022/05/14/%E5%B8%B8%E8%A7%81%E7%9A%84HTTP%E7%8A%B6%E6%80%81%E7%A0%81/" itemprop="url">
+            <a class="post-title-link" href="/2022/06/30/ConditionalOn%E7%9B%B8%E5%85%B3%E6%B3%A8%E8%A7%A3%E5%92%8CConditional%E4%BB%A5%E5%8F%8ACondition%E6%8E%A5%E5%8F%A3%E7%9A%84%E4%BD%BF%E7%94%A8/" itemprop="url">
               
-                <span itemprop="name">常见的HTTP状态码</span>
+                <span itemprop="name">ConditionalOn相关注解和Conditional以及Condition接口的使用</span>
               
             </a>
         
@@ -297,9 +297,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2022-05-14T19:02:36+08:00"
-              content="2022-05-14" >
-          05-14
+              datetime="2022-06-30T17:43:03+08:00"
+              content="2022-06-30" >
+          06-30
         </time>
       </div>
 
@@ -860,107 +860,6 @@
                   slicesOfContent.forEach(function (slice) {
                     resultItem += "<a href='" + articleUrl + "'>" +
                       "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-</body>
-</html>
-   "<p class=\"search-result\">" + highlightKeyword(content, slice) +
                       "...</p>" + "</a>";
                   });
 
