@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="算法," />
+  <meta name="keywords" content="future," />
 
 
 
@@ -77,20 +77,20 @@
 
 
 
-<meta name="description" content="二叉树层序遍历一、前言在之前我们实现了二叉树的前中后序遍历，现在我们来介绍一下如何实现二叉树的层序遍历 二、实现方法首先，我们需要实现一个二叉树的层序遍历，需要借助一个辅助数据结构，那就是队列，队列特点是先进先出。 三、代码实现首先定义一个基础类 12345678910111213141516171819public class TreeNode &amp;#123;    public int val;">
+<meta name="description" content="一、背景今天线上发现了一个接口的调用时间非常长，长达3s。手上也没有什么活，想着怎么去优化一下。前不久也在网上看到了一些类似功能优化步骤，最终想着用Future异步处理时间较长的复杂业务，于是就开干啦！！！ 二、定义Future：是jdk1.5出现的，Future定义了操作异步执行的一些方法，如获取异步任务的执行结果，取消任务的执行，判断任务是否完成、取消等操作。Future接口可以为主线程开一个">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二叉树层序遍历">
-<meta property="og:url" content="http://example.com/2022/07/25/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/index.html">
+<meta property="og:title" content="FutureTask详解">
+<meta property="og:url" content="http://example.com/2022/08/16/FutureTask%E8%AF%A6%E8%A7%A3/index.html">
 <meta property="og:site_name" content="一乡风博客">
-<meta property="og:description" content="二叉树层序遍历一、前言在之前我们实现了二叉树的前中后序遍历，现在我们来介绍一下如何实现二叉树的层序遍历 二、实现方法首先，我们需要实现一个二叉树的层序遍历，需要借助一个辅助数据结构，那就是队列，队列特点是先进先出。 三、代码实现首先定义一个基础类 12345678910111213141516171819public class TreeNode &amp;#123;    public int val;">
+<meta property="og:description" content="一、背景今天线上发现了一个接口的调用时间非常长，长达3s。手上也没有什么活，想着怎么去优化一下。前不久也在网上看到了一些类似功能优化步骤，最终想着用Future异步处理时间较长的复杂业务，于是就开干啦！！！ 二、定义Future：是jdk1.5出现的，Future定义了操作异步执行的一些方法，如获取异步任务的执行结果，取消任务的执行，判断任务是否完成、取消等操作。Future接口可以为主线程开一个">
 <meta property="og:locale">
-<meta property="og:image" content="https://assets.leetcode.com/uploads/2021/02/19/tree1.jpg">
-<meta property="article:published_time" content="2022-07-25T07:38:22.000Z">
-<meta property="article:modified_time" content="2022-07-28T03:06:06.003Z">
+<meta property="og:image" content="http://example.com/images/image-20220816133622243.png">
+<meta property="article:published_time" content="2022-08-16T06:36:06.000Z">
+<meta property="article:modified_time" content="2022-08-16T06:37:32.158Z">
 <meta property="article:author" content="xs.wu">
-<meta property="article:tag" content="算法">
+<meta property="article:tag" content="future">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://assets.leetcode.com/uploads/2021/02/19/tree1.jpg">
+<meta name="twitter:image" content="http://example.com/images/image-20220816133622243.png">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://example.com/2022/07/25/二叉树层序遍历/"/>
+  <link rel="canonical" href="http://example.com/2022/08/16/FutureTask详解/"/>
 
 
 
 
 
-  <title>二叉树层序遍历 | 一乡风博客</title>
+  <title>FutureTask详解 | 一乡风博客</title>
   
 
 
@@ -287,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/25/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/16/FutureTask%E8%AF%A6%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -304,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">二叉树层序遍历</h1>
+          <h1 class="post-title" itemprop="name headline">FutureTask详解</h1>
         
 
         <div class="post-meta">
@@ -316,8 +316,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-07-25T15:38:22+08:00">
-                2022-07-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-08-16T14:36:06+08:00">
+                2022-08-16
               </time>
             
 
@@ -339,8 +339,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构与算法</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -357,9 +357,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2022/07/25/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/#comments" itemprop="discussionUrl">
+                <a href="/2022/08/16/FutureTask%E8%AF%A6%E8%A7%A3/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2022/07/25/二叉树层序遍历/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2022/08/16/FutureTask详解/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -392,37 +392,59 @@
       
 
       
-        <h1 id="二叉树层序遍历"><a href="#二叉树层序遍历" class="headerlink" title="二叉树层序遍历"></a>二叉树层序遍历</h1><h3 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h3><p>在之前我们实现了二叉树的前中后序遍历，现在我们来介绍一下如何实现二叉树的层序遍历</p>
-<h3 id="二、实现方法"><a href="#二、实现方法" class="headerlink" title="二、实现方法"></a>二、实现方法</h3><p>首先，我们需要实现一个二叉树的层序遍历，需要借助一个辅助数据结构，那就是队列，队列特点是先进先出。</p>
-<h3 id="三、代码实现"><a href="#三、代码实现" class="headerlink" title="三、代码实现"></a>三、代码实现</h3><p>首先定义一个基础类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TreeNode</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> val;</span><br><span class="line">    <span class="keyword">public</span> TreeNode left;</span><br><span class="line">    <span class="keyword">public</span> TreeNode right;</span><br><span class="line"></span><br><span class="line">    TreeNode() &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">TreeNode</span><span class="params">(<span class="type">int</span> val)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.val = val;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">TreeNode</span><span class="params">(<span class="type">int</span> val, TreeNode left, TreeNode right)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.val = val;</span><br><span class="line">        <span class="built_in">this</span>.left = left;</span><br><span class="line">        <span class="built_in">this</span>.right = right;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BinaryTreeLevelOrderTraversal</span> &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 在 Queue 中 add() 和 offer() 有什么区别？</span></span><br><span class="line"><span class="comment">     *  1、Queue 中 add() 和 offer()都是用来向队列添加一个元素。</span></span><br><span class="line"><span class="comment">     *  2、在容量已满的情况下，add() 方法会抛出IllegalStateException异常，offer() 方法只会返回 false 。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> List&lt;List&lt;Integer&gt;&gt; fun01List = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> List&lt;List&lt;Integer&gt;&gt; fun02List = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">TreeNode</span> <span class="variable">root</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">TreeNode</span>(<span class="number">1</span>,<span class="keyword">new</span> <span class="title class_">TreeNode</span>(<span class="number">2</span>,<span class="keyword">new</span> <span class="title class_">TreeNode</span>(<span class="number">4</span>), <span class="literal">null</span>), <span class="keyword">new</span> <span class="title class_">TreeNode</span>(<span class="number">3</span>));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">BinaryTreeLevelOrderTraversal</span>().fun01(root, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">BinaryTreeLevelOrderTraversal</span>().fun02(root);</span><br><span class="line"></span><br><span class="line">        System.out.println(fun01List);</span><br><span class="line">        System.out.println(fun02List);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * BFS 借助队列</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> root 当前树根节点</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">fun02</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">        queue.add(root);</span><br><span class="line">        <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">            <span class="comment">// add == offer</span></span><br><span class="line">            List&lt;Integer&gt; item = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">            <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> queue.size();</span><br><span class="line">            <span class="keyword">while</span> (len &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="type">TreeNode</span> <span class="variable">poll</span> <span class="operator">=</span> queue.poll();</span><br><span class="line">                <span class="keyword">if</span> (poll.left != <span class="literal">null</span>) &#123;</span><br><span class="line">                    queue.add(poll.left);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (poll.right != <span class="literal">null</span>) &#123;</span><br><span class="line">                    queue.add(poll.right);</span><br><span class="line">                &#125;</span><br><span class="line">                item.add(poll.val);</span><br><span class="line">                len --;</span><br><span class="line">            &#125;</span><br><span class="line">            fun02List.add(item);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * DFS--递归方式</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> root 树根节点</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> deep 当前层级</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">fun01</span><span class="params">(TreeNode root, <span class="type">int</span> deep)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        deep++;</span><br><span class="line">        <span class="comment">// 判断当前层级</span></span><br><span class="line">        <span class="keyword">while</span> (fun01List.size() &lt; deep) &#123;</span><br><span class="line">            List&lt;Integer&gt; item = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">            fun01List.add(item);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        fun01List.get(deep - <span class="number">1</span>).add(root.val);</span><br><span class="line">        fun01(root.left, deep);</span><br><span class="line">        fun01(root.right, deep);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="四、解决leetCode二叉树题目"><a href="#四、解决leetCode二叉树题目" class="headerlink" title="四、解决leetCode二叉树题目"></a>四、解决leetCode二叉树题目</h3><h6 id="一、题目：107-二叉树的层序遍历-II"><a href="#一、题目：107-二叉树的层序遍历-II" class="headerlink" title="一、题目：107. 二叉树的层序遍历 II"></a>一、题目：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-level-order-traversal-ii/">107. 二叉树的层序遍历 II</a></h6><p>难度中等599</p>
-<p>给你二叉树的根节点 <code>root</code> ，返回其节点值 <strong>自底向上的层序遍历</strong> 。 （即按从叶子节点所在层到根节点所在的层，逐层从左向右遍历）</p>
-<p><strong>示例 1：</strong></p>
-<p><img src="https://assets.leetcode.com/uploads/2021/02/19/tree1.jpg" alt="img"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：root = [3,9,20,null,null,15,7]</span><br><span class="line">输出：[[15,7],[9,20],[3]]</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：root = [1]</span><br><span class="line">输出：[[1]]</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 3：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：root = []</span><br><span class="line">输出：[]</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
+        <h3 id="一、背景"><a href="#一、背景" class="headerlink" title="一、背景"></a>一、背景</h3><p>今天线上发现了一个接口的调用时间非常长，长达3s。手上也没有什么活，想着怎么去优化一下。前不久也在网上看到了一些类似功能优化步骤，最终想着用Future异步处理时间较长的复杂业务，于是就开干啦！！！</p>
+<h3 id="二、定义"><a href="#二、定义" class="headerlink" title="二、定义"></a>二、定义</h3><p>Future：是jdk1.5出现的，Future定义了操作异步执行的一些方法，如获取异步任务的执行结果，取消任务的执行，判断任务是否完成、取消等操作。Future接口可以为主线程开一个分支任务，专门为主线程处理好事和费力的复杂业务。<code>目的：异步多线程任务执行且返回有结果，三个特点：多线程、有返回、异步任务</code></p>
+<h3 id="三、FutureTask关系类图"><a href="#三、FutureTask关系类图" class="headerlink" title="三、FutureTask关系类图"></a>三、FutureTask关系类图</h3><p><img src="/../images/image-20220816133622243.png" alt="image-20220816133622243"></p>
+<h3 id="四、Future编码实战和优缺点分析"><a href="#四、Future编码实战和优缺点分析" class="headerlink" title="四、Future编码实战和优缺点分析"></a>四、Future编码实战和优缺点分析</h3><ol>
+<li><p>优点：Future+线程池异步多线程任务配合，可以显著提高程序的执行效率</p>
 <ul>
-<li>树中节点数目在范围 <code>[0, 2000]</code> 内</li>
-<li><code>-1000 &lt;= Node.val &lt;= 1000</code></li>
+<li><p>案例case</p>
+<ul>
+<li>无FutureTask</li>
 </ul>
-<p>来源：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-level-order-traversal-ii/">力扣</a></p>
-<h6 id="二、解法"><a href="#二、解法" class="headerlink" title="二、解法"></a>二、解法</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="title function_">levelOrderBottom</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">        Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> <span class="title class_">LinkedList</span>();</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> list;</span><br><span class="line">        &#125;</span><br><span class="line">        queue.add(root);</span><br><span class="line">        <span class="keyword">while</span>(!queue.isEmpty()) &#123;</span><br><span class="line"></span><br><span class="line">            List&lt;Integer&gt; list1 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">            <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> queue.size();</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">                <span class="type">TreeNode</span> <span class="variable">node</span> <span class="operator">=</span> queue.poll();</span><br><span class="line">                list1.add(node.val);</span><br><span class="line">                <span class="keyword">if</span> (node.left != <span class="literal">null</span>) &#123;</span><br><span class="line">                    queue.add(node.left);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (node.right != <span class="literal">null</span>) &#123;</span><br><span class="line">                    queue.add(node.right);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            list.add(list1);</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> list.size()- <span class="number">1</span>; i &gt;=<span class="number">0</span> ; i--) &#123;</span><br><span class="line">            res.add(list.get(i));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">  <span class="type">Long</span> <span class="variable">startTime</span> <span class="operator">=</span> System.currentTimeMillis();</span><br><span class="line">  test();</span><br><span class="line"></span><br><span class="line">  <span class="type">Long</span> <span class="variable">endTime</span> <span class="operator">=</span> System.currentTimeMillis();</span><br><span class="line">  System.out.println(<span class="string">&quot;执行时间为&quot;</span> + (endTime - startTime) + <span class="string">&quot;毫秒&quot;</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">test</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="comment">// 三个复杂业务实现</span></span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">// 业务1</span></span><br><span class="line">    TimeUnit.MILLISECONDS.sleep(<span class="number">500</span>);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">// 业务2</span></span><br><span class="line">    TimeUnit.MILLISECONDS.sleep(<span class="number">500</span>);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">// 业务3</span></span><br><span class="line">    TimeUnit.MILLISECONDS.sleep(<span class="number">500</span>);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 执行时间为1506毫秒</span></span><br></pre></td></tr></table></figure>
 
-<p><code>你知道的越多，不知道的就越多，每天进步一点点</code></p>
-<p><code>The more you know, the more you don&#39;t know，Make small but daily progress</code></p>
+<ul>
+<li>有FutureTask</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">  <span class="type">ExecutorService</span> <span class="variable">executorService</span> <span class="operator">=</span> Executors.newFixedThreadPool(<span class="number">3</span>);</span><br><span class="line">  <span class="type">Long</span> <span class="variable">startTime</span> <span class="operator">=</span> System.currentTimeMillis();</span><br><span class="line">  futureTaskTest(executorService);</span><br><span class="line">  <span class="type">Long</span> <span class="variable">endTime</span> <span class="operator">=</span> System.currentTimeMillis();</span><br><span class="line">  System.out.println(<span class="string">&quot;执行时间为&quot;</span> + (endTime - startTime) + <span class="string">&quot;毫秒&quot;</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">futureTaskTest</span><span class="params">(ExecutorService executorService)</span> &#123;</span><br><span class="line">  FutureTask&lt;String&gt; task01 = <span class="keyword">new</span> <span class="title class_">FutureTask</span>&lt;&gt;(() -&gt; &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="comment">// 业务1</span></span><br><span class="line">      TimeUnit.MILLISECONDS.sleep(<span class="number">500</span>);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">      e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;task01 over&quot;</span>;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  executorService.submit(task01);</span><br><span class="line">  FutureTask&lt;String&gt; task02 = <span class="keyword">new</span> <span class="title class_">FutureTask</span>&lt;&gt;(() -&gt; &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="comment">// 业务1</span></span><br><span class="line">      TimeUnit.MILLISECONDS.sleep(<span class="number">500</span>);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">      e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;task02 over&quot;</span>;</span><br><span class="line">  &#125;);</span><br><span class="line">  executorService.submit(task02);</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">// 业务3</span></span><br><span class="line">    TimeUnit.MILLISECONDS.sleep(<span class="number">500</span>);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">  executorService.shutdown();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 执行时间为503毫秒</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>缺点：get阻塞、isDone()轮询耗费CPU</p>
+<ul>
+<li><p>get阻塞：一旦调用了get()方法求结果，如果计算没有完成容易导致程序阻塞</p>
+</li>
+<li><p>案例case</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ExecutionException, InterruptedException &#123;\</span><br><span class="line">   FutureTask&lt;String&gt; futureTask = <span class="keyword">new</span> <span class="title class_">FutureTask</span>&lt;&gt;(() -&gt; &#123;</span><br><span class="line">     TimeUnit.SECONDS.sleep(<span class="number">2</span>);</span><br><span class="line">     <span class="keyword">return</span> <span class="string">&quot;task over&quot;</span>;</span><br><span class="line">   &#125;);</span><br><span class="line">   <span class="type">Thread</span> <span class="variable">thread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(futureTask, <span class="string">&quot;t1&quot;</span>);</span><br><span class="line">   thread.start();</span><br><span class="line">   System.out.println(futureTask.get());</span><br><span class="line">   System.out.println(<span class="string">&quot;main 线程end&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>调用get方法不想一直等待，希望过时不候，可以自动离开</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ExecutionException, InterruptedException &#123;\</span><br><span class="line">   FutureTask&lt;String&gt; futureTask = <span class="keyword">new</span> <span class="title class_">FutureTask</span>&lt;&gt;(() -&gt; &#123;</span><br><span class="line">     TimeUnit.SECONDS.sleep(<span class="number">2</span>);</span><br><span class="line">     <span class="keyword">return</span> <span class="string">&quot;task over&quot;</span>;</span><br><span class="line">   &#125;);</span><br><span class="line">   <span class="type">Thread</span> <span class="variable">thread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(futureTask, <span class="string">&quot;t1&quot;</span>);</span><br><span class="line">   thread.start();</span><br><span class="line">   <span class="comment">// 三秒后没有拿到结果，直接抛出TimeoutException</span></span><br><span class="line">   System.out.println(futureTask.get(<span class="number">3</span>, TimeUnit.SECONDS));</span><br><span class="line">   System.out.println(<span class="string">&quot;main 线程end&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>isDone()轮询耗费CPU</p>
+</li>
+<li><p>案例case</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ExecutionException, InterruptedException &#123;</span><br><span class="line">  FutureTask&lt;String&gt; futureTask = <span class="keyword">new</span> <span class="title class_">FutureTask</span>&lt;&gt;(() -&gt; &#123;</span><br><span class="line">    TimeUnit.SECONDS.sleep(<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;task over&quot;</span>;</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="type">Thread</span> <span class="variable">thread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(futureTask, <span class="string">&quot;t1&quot;</span>);</span><br><span class="line">  thread.start();</span><br><span class="line">  System.out.println(Thread.currentThread().getName() + <span class="string">&quot;\t start&quot;</span>);</span><br><span class="line">  <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (futureTask.isDone()) &#123;</span><br><span class="line">      System.out.println(futureTask.get());</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;正在处理中......&quot;</span>);</span><br><span class="line">      TimeUnit.MILLISECONDS.sleep(<span class="number">500</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  System.out.println(<span class="string">&quot;main 线程end&quot;</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h3 id="五、总结"><a href="#五、总结" class="headerlink" title="五、总结"></a>五、总结</h3><ol>
+<li>Future对于结果的获取不是很友好，只能通过阻塞和轮询的方式得到任务的结果</li>
+<li>想完成更复杂的任务，如下：<ul>
+<li>回调通知<ul>
+<li>应对Future的完成时间，完成后可以回调通知我</li>
+<li>通过轮询的方式耗费CPU且代码不雅观</li>
+</ul>
+</li>
+<li>创建异步任务(Future+线程池)</li>
+<li>多个任务前后依赖可以组合处理（炒菜）<ul>
+<li>前后异步结果依赖</li>
+</ul>
+</li>
+<li>对计算速度选最快</li>
+</ul>
+</li>
+<li>从FutureTask慢慢引入到<code>CompletableFuture</code></li>
+</ol>
 
       
     </div>
@@ -469,7 +491,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
+            <a href="/tags/future/" rel="tag"># future</a>
           
         </div>
       
@@ -482,8 +504,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2022/07/07/%E9%80%92%E5%BD%92%E9%81%8D%E5%8E%86%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="next" title="递归遍历二叉树">
-                <i class="fa fa-chevron-left"></i> 递归遍历二叉树
+              <a href="/2022/07/31/%E6%9C%89%E5%85%B3Hexo%E4%B8%BB%E4%BD%93next%E5%88%86%E9%A1%B5%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="next" title="有关Hexo主题next分页问题解决方案">
+                <i class="fa fa-chevron-left"></i> 有关Hexo主题next分页问题解决方案
               </a>
             
           </div>
@@ -491,10 +513,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2022/07/28/mysql1093%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" rel="prev" title="mysql1093错误解决方法">
-                mysql1093错误解决方法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -668,7 +686,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">1.</span> <span class="nav-text">二叉树层序遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%89%8D%E8%A8%80"><span class="nav-number">1.0.1.</span> <span class="nav-text">一、前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="nav-number">1.0.2.</span> <span class="nav-text">二、实现方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.0.3.</span> <span class="nav-text">三、代码实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E8%A7%A3%E5%86%B3leetCode%E4%BA%8C%E5%8F%89%E6%A0%91%E9%A2%98%E7%9B%AE"><span class="nav-number">1.0.4.</span> <span class="nav-text">四、解决leetCode二叉树题目</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E9%A2%98%E7%9B%AE%EF%BC%9A107-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86-II"><span class="nav-number">1.0.4.0.0.1.</span> <span class="nav-text">一、题目：107. 二叉树的层序遍历 II</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E8%A7%A3%E6%B3%95"><span class="nav-number">1.0.4.0.0.2.</span> <span class="nav-text">二、解法</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">一、背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%AE%9A%E4%B9%89"><span class="nav-number">2.</span> <span class="nav-text">二、定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81FutureTask%E5%85%B3%E7%B3%BB%E7%B1%BB%E5%9B%BE"><span class="nav-number">3.</span> <span class="nav-text">三、FutureTask关系类图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E3%80%81Future%E7%BC%96%E7%A0%81%E5%AE%9E%E6%88%98%E5%92%8C%E4%BC%98%E7%BC%BA%E7%82%B9%E5%88%86%E6%9E%90"><span class="nav-number">4.</span> <span class="nav-text">四、Future编码实战和优缺点分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">五、总结</span></a></li></ol></div>
             
 
           </div>
@@ -837,9 +855,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://example.com/2022/07/25/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/';
-          this.page.identifier = '2022/07/25/二叉树层序遍历/';
-          this.page.title = '二叉树层序遍历';
+          this.page.url = 'http://example.com/2022/08/16/FutureTask%E8%AF%A6%E8%A7%A3/';
+          this.page.identifier = '2022/08/16/FutureTask详解/';
+          this.page.title = 'FutureTask详解';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://留言.disqus.com/embed.js';
